@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MiscUrls } from './misc-urls';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PersFinAppAng';
+  private imgs = new MiscUrls();
+
+  getNameOfTheBeast(id: number): string{
+    return `${id} the Name of The Beast!!!... (C) Slayer`
+  }
 }
