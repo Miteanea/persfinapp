@@ -7,14 +7,17 @@
     <img src="{{imgs.logo}}" style="height:50px"/>
   </p>
 </div>
+
 <div class="container">
   <app-bill-display></app-bill-display>
 </div>
+
 <div class="container">
   <app-gen-stats></app-gen-stats>
 </div>
+
 <div class="container">
-  <app-control-panel></app-control-panel>
+  <app-bill-creation (saveRequest)="saveBillComponent($event)"></app-bill-creation>
 </div>
 
 <router-outlet></router-outlet>

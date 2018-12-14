@@ -1,0 +1,20 @@
+<p>
+  bill-creation works!
+</p>
+
+<label>ID</label>
+<input #id >
+
+<label>DATE</label>
+<input #date>
+
+<label>VENDOR</label>
+<input #vendor>
+
+<label>SUM</label>
+<input #sum >
+
+
+<button (click)="saveBill(id.value, sum.value, date.value, vendor.value)">
+  Save Bill
+</button>

@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BillDisplayComponent } from './bill-display/bill-display.component';
 import { GenStatsComponent } from './gen-stats/gen-stats.component';
-import { ControlPanelComponent } from './control-panel/control-panel.component';
 
-import {MiscUrls} from './misc-urls'
+import {MiscUrls} from './misc-urls';
+import { BillCreationComponent } from './bill-creation/bill-creation.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     BillDisplayComponent,
     GenStatsComponent,
-    ControlPanelComponent
+    BillCreationComponent
   ],
   imports: [
     BrowserModule,
