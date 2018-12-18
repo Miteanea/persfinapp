@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Bill } from './bill';
+import { Bill } from './Models/bill';
 
 @Injectable({
   providedIn: 'root',
@@ -7,11 +7,11 @@ import { Bill } from './bill';
 
 export class Repo {
   private bills = [
-    new Bill ( 1, "12/12/2018", "Lidl", 34.4),
-    new Bill ( 2, "12/12/2018", "Aldi", 34.4),
-    new Bill ( 3, "12/12/2018", "Carrefour", 34.4),
-    new Bill ( 4, "12/12/2018", "IP", 34.4),
-    new Bill ( 5, "12/12/2018", "Lidl", 34.4),
+    new Bill ( 1, "12/12/2018", "Lidl", 34.4,[]),
+    new Bill ( 2, "12/12/2018", "Aldi", 34.4,[]),
+    new Bill ( 3, "12/12/2018", "Carrefour", 34.4,[]),
+    new Bill ( 4, "12/12/2018", "IP", 34.4,[]),
+    new Bill ( 5, "12/12/2018", "Lidl", 34.4,[]),
   ];
 
   getBills() : Bill[]{

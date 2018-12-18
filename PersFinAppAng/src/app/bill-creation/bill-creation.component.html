@@ -1,20 +1,25 @@
-<p>
-  bill-creation works!
-</p>
-
-<label>ID</label>
-<input #id >
-
-<label>DATE</label>
-<input #date>
-
-<label>VENDOR</label>
-<input #vendor>
-
-<label>SUM</label>
-<input #sum >
+<button (click)="inputExpenses=true">Enter Bill</button>
+<div *ngIf="inputExpenses">
+  <p>
+    <strong>Add a new Bill</strong>
+  </p>
 
 
-<button (click)="saveBill(id.value, sum.value, date.value, vendor.value)">
-  Save Bill
-</button>
+  <label>Id: </label>
+  <input #id >
+
+  <label>Date: </label>
+  <input #date>
+
+  <label>Vendor: </label>
+  <input #vendor>
+
+  <div>Sum: {{bill.sum}}</div>
+
+
+
+
+  <app-expense-input></app-expense-input>
+  <button *ngIf="inputExpenses" (click)="inputExpenses=false">Save And Close</button>
+
+</div>

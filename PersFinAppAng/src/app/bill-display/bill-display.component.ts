@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Repo} from '../repo';
-import { Bill } from '../bill';
+import { Bill } from '../Models/bill';
 
 @Component({
   selector: 'app-bill-display',

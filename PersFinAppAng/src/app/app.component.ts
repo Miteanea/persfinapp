@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MiscUrls } from './misc-urls';
 import { Repo } from "./repo";
-import { Bill } from './bill';
+import { Bill } from './Models/bill';
 
 @Component({
   selector: 'app-root',
