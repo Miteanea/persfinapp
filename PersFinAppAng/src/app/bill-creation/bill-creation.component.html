@@ -4,22 +4,17 @@
     <strong>Add a new Bill</strong>
   </p>
 
-
-  <label>Id: </label>
-  <input #id >
-
   <label>Date: </label>
   <input #date>
 
   <label>Vendor: </label>
   <input #vendor>
+<!--
+  <div>Sum: {{bill.sum}}</div> -->
 
-  <div>Sum: {{bill.sum}}</div>
+  <app-expense-input (addRequest)="AddExpense($event)"></app-expense-input>
 
-
-
-
-  <app-expense-input></app-expense-input>
-  <button *ngIf="inputExpenses" (click)="inputExpenses=false">Save And Close</button>
-
+  <p>Expenses:</p>
+  <div *ngFor="let expense of expenses">{{expense.name}}; {{expense.quantity}}; {{expense.price}}; {{expense.category}}</div>
+  <button *ngIf="inputExpenses" (click)="inputExpenses=false">Save Bill</button>
 </div>

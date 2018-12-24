@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { EventEmitter } from '@angular/core';
-import { Bill } from "../Models/bill";
-import { Output } from "@angular/core";
+import { Component, OnInit, Output } from '@angular/core';
+import { Bill, Expense } from "../Models/bill";
 
 @Component({
   selector: 'app-bill-creation',
@@ -9,22 +7,15 @@ import { Output } from "@angular/core";
   styleUrls: ['./bill-creation.component.css']
 })
 export class BillCreationComponent implements OnInit {
-  @Output() saveRequest = new EventEmitter<Bill>();
-
-  inputExpenses = false;
-
-  bill : Bill;
-  public saveBill(id, sum, date, vendor)  {
-
-    this.bill = new Bill(
-      id as number, date, vendor, sum as number, []);
-
-    this.saveRequest.emit(this.bill);
-  }
+  @Output() inputExpenses = false;
+  expenses = [ new Expense("test", 11, 11, "test")];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  private AddExpense(expense : Expense){
+    this.expenses.push(expense)
+  }
 }

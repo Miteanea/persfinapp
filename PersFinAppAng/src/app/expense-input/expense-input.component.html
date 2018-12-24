@@ -1,14 +1,14 @@
-<div formGroupName = "expense">
+<div>
   <h4>Expense</h4>
 
   <label>
     Name:
-    <input type="text" formControlName="name">
+    <input >
   </label>
 
   <label>
     Quantity:
-    <input type="number" formControlName="quantity">
+    <input type="number" [(quantity)]>
   </label>
 
   <label>
@@ -20,4 +20,6 @@
     Category:
     <input type="text" formControlName="category">
   </label>
+
+  <button (click)="SaveExpense()">Add Expense</button>
 </div>
