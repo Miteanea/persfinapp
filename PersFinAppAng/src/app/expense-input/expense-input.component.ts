@@ -15,10 +15,10 @@ export class ExpenseInputComponent implements OnInit {
 
   private newForm(){
     return new FormGroup({
-      name : new FormControl(''),
-      quantity:new FormControl(''),
-      price: new FormControl(''),
-      category: new FormControl(''),
+      name : new FormControl('', Validators.required),
+      quantity:new FormControl('', Validators.required),
+      price: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required),
     })
   }
 

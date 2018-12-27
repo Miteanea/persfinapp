@@ -1,7 +1,7 @@
 <div>
   <h4>Expense</h4>
 
-  <form [formGroup]="expenseForm" (ngSubmit)="onSubmit(); clear">
+  <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
 
   <label>
     Name:
@@ -10,12 +10,12 @@
 
   <label>
     Quant.:
-    <input formControlName="quantity" placeholder="Q">
+    <input type="number" formControlName="quantity" placeholder="Q">
   </label>
 
   <label>
     Price:
-    <input formControlName="price" placeholder="P">
+    <input type="number" formControlName="price" placeholder="P">
   </label>
 
   <label>
@@ -23,9 +23,7 @@
     <input formControlName="category" placeholder="C">
   </label>
 
-  <button type="submit" >Submit</button>
+  <button type="submit" [disabled]="!expenseForm.valid">Add Expense</button>
 </form>
 
-
-  <button (click)="SaveExpense(); ">Add Expense</button>
 </div>

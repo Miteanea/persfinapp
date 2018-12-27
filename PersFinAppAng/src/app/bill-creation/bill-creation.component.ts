@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Bill, Expense } from "../Models/bill";
 
 @Component({
@@ -8,11 +9,23 @@ import { Bill, Expense } from "../Models/bill";
 })
 export class BillCreationComponent implements OnInit {
   @Output() inputExpenses = false;
-  expenses = [ new Expense("test", 11, 11, "test")];
+
+  billForm: FormGroup;
+  expenses: Expense[];
+
+  private newBill(){
+    return new FormGroup({
+      date: new FormControl('', Validators.required),
+      vendor: new FormControl('', Validators.required)
+    })
+  }
 
   constructor() { }
 
   ngOnInit() {
+    this.billForm = this.newBill();
+    this.expenses = [];
+
   }
 
   private AddExpense(expense : Expense){
