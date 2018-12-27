@@ -12,6 +12,6 @@ export class Expense {
     private name: string,
     private quantity: number,
     private price: number,
-    private category: string
+    private category: string,
   ) {}
 }

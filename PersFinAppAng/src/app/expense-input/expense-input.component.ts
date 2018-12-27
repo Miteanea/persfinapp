@@ -1,9 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder,
          Validators } from "@angular/forms";
 import { ExpansionCase } from '@angular/compiler';
 import { Expense } from '../Models/bill';
-import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-expense-input',
@@ -11,26 +10,32 @@ import { EventEmitter } from 'events';
   styleUrls: ['./expense-input.component.css']
 })
 export class ExpenseInputComponent implements OnInit {
-  expense: Expense;
-  name: string;
-  quantity: number;
-  price: number;
-  category: string;
+
+  expenseForm : FormGroup;
+
+  private newForm(){
+    return new FormGroup({
+      name : new FormControl(''),
+      quantity:new FormControl(''),
+      price: new FormControl(''),
+      category: new FormControl(''),
+    })
+  }
 
   @Output() addRequest = new EventEmitter<Expense>();
 
   constructor(
     private fb: FormBuilder
-  ) { }
+    ) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+      this.expenseForm = this.newForm();
+    }
 
-  private SaveExpense(){
-    this.expense = new Expense(
-      this.name, this.quantity, this.price, this.name);
-
-      this.addRequest.emit(this.expense);
+  private onSubmit(){
+    this.addRequest.emit(this.expenseForm.value);
+    this.expenseForm = this.newForm();
+    document.getElementById("nameBox").focus();
   }
 
 }

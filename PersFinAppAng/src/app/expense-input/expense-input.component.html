@@ -1,25 +1,31 @@
 <div>
   <h4>Expense</h4>
 
+  <form [formGroup]="expenseForm" (ngSubmit)="onSubmit(); clear">
+
   <label>
     Name:
-    <input >
+    <input id="nameBox" formControlName="name" placeholder="N">
   </label>
 
   <label>
-    Quantity:
-    <input type="number" [(quantity)]>
+    Quant.:
+    <input formControlName="quantity" placeholder="Q">
   </label>
 
   <label>
     Price:
-    <input type="number" formControlName="price">
+    <input formControlName="price" placeholder="P">
   </label>
 
   <label>
-    Category:
-    <input type="text" formControlName="category">
+    Cat.:
+    <input formControlName="category" placeholder="C">
   </label>
 
-  <button (click)="SaveExpense()">Add Expense</button>
+  <button type="submit" >Submit</button>
+</form>
+
+
+  <button (click)="SaveExpense(); ">Add Expense</button>
 </div>
