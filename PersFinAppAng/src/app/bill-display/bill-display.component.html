@@ -1,0 +1,8 @@
+<h4>
+  bill-display works!
+</h4>
+<ul>
+  <li *ngFor="let bill of bills">
+    {{bill.date | date}} ; {{bill.vendor}} ; {{bill.sum | currency}}
+  </li>
+</ul>
