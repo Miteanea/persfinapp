@@ -1,0 +1,23 @@
+<button (click)="inputExpenses=true">Enter Bill</button>
+<div *ngIf="inputExpenses">
+  <p>
+    <strong>Add a new Bill</strong>
+  </p>
+<form [formGroup]="billForm" (ngSubmit)="onSubmit()">
+
+  <label>Date: </label>
+  <input type="date" formControlName="date" placeholder="date">
+
+  <label>Vendor: </label>
+  <input formControlName="vendor" placeholder="vendor">
+
+</form>
+
+  <!--  <div>Sum: {{bill.sum}}</div> -->
+
+  <app-expense-input (addRequest)="AddExpense($event)"></app-expense-input>
+
+  <p>Expenses:</p>
+  <div *ngFor="let expense of expenses">{{expense.name}}; {{expense.quantity}}; {{expense.price}}; {{expense.category}}</div>
+  <button *ngIf="inputExpenses" (click)="inputExpenses=false" [disabled]="!billForm.valid || (expenses.length == 0)">Save Bill</button>
+</div>
