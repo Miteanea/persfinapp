@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+
+
+<div class="container">
+  <p>
+    <img src="{{imgs.logo}}" style="height:50px"/>
+    {{title}}
+    <img src="{{imgs.logo}}" style="height:50px"/>
+    {{getNameOfTheBeast(600+60+6)}}
+    <img src="{{imgs.logo}}" style="height:50px"/>
+  </p>
+</div>
+
+<div class="container">
+  <app-bill-display></app-bill-display>
+</div>
+
+<div class="container">
+  <app-bill-creation (saveRequest)="saveBillComponent($event)"></app-bill-creation>
+</div>
+
+<div class="container">
+  <app-gen-stats></app-gen-stats>
+</div>
+
+
