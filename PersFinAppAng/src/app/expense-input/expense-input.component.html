@@ -1,0 +1,29 @@
+<div>
+  <h4>Expense</h4>
+
+  <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    Name:
+    <input id="nameBox" formControlName="name" placeholder="N">
+  </label>
+
+  <label>
+    Quant.:
+    <input type="number" formControlName="quantity" placeholder="Q">
+  </label>
+
+  <label>
+    Price:
+    <input type="number" formControlName="price" placeholder="P">
+  </label>
+
+  <label>
+    Cat.:
+    <input formControlName="category" placeholder="C">
+  </label>
+
+  <button type="submit" [disabled]="!expenseForm.valid">Add Expense</button>
+</form>
+
+</div>
